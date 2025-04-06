@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/myhiber</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">#Ep31ub5bsk@</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- SQL dialect (MySQL 8) -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Show SQL in logs (for debugging) -->
+        <property name="show_sql">true</property>
+
+        <!-- Auto-update database schema -->
+        <property name="hbm2ddl.auto">update</property>
+        <mapping class="org.example.Student" />
+
+    </session-factory>
+</hibernate-configuration>

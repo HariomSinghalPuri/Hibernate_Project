@@ -1,0 +1,30 @@
+A list of commonly used Hibernate annotations, which are essential for developers working with Hibernate—
+a framework in Java for mapping objects to database tables. Here's a breakdown of the annotations mentioned:
+
+----->Annotations in Hibernate
+
+-->@Entity
+----->Marks a class as a JPA entity, meaning it is mapped to a database table.
+----->Each instance of the class corresponds to a row in the table.
+
+-->@Table
+----->Specifies the details of the database table associated with the entity.
+----->You can define attributes like the table name using name (e.g., @Table(name = "brands")).
+
+-->@Id
+----->Indicates the primary key of an entity.
+----->It is mandatory for every entity and often used alongside @GeneratedValue for automatic ID generation.
+
+-->@GeneratedValue
+----->Used with @Id to automatically generate unique primary key values during persistence.
+----->Supports strategies like GenerationType.IDENTITY, GenerationType.AUTO, and others for ID generation.
+
+-->@Column
+----->Maps a field to a specific column in the database table.
+----->Allows customization of column attributes such as name, length, and uniqueness (e.g., @Column(name = "brandName")).
+
+-->@Transient
+----->Marks a field or property that should not be persisted to the database.
+----->Useful for fields that are derived or calculated (e.g., @Transient private String fullName;).
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
