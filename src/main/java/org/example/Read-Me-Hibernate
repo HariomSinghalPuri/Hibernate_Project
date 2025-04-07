@@ -28,3 +28,51 @@ a framework in Java for mapping objects to database tables. Here's a breakdown o
 ----->Useful for fields that are derived or calculated (e.g., @Transient private String fullName;).
 
 <<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+In Hibernate (a popular ORM tool in Java), both get() and load() methods are used to retrieve objects from the database
+using their primary key. However, they behave differently in terms of how and when they hit the database and what happens when the object doesn't exist.
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+✅ get() Method
+Signature:
+public Object get(Class clazz, Serializable id)
+
+🔹 Characteristics:
+Eager loading: Immediately hits the database and returns the actual object.
+Returns null if no object is found for the given ID.
+Used when you want to check if the object exists or not.
+Safe to use when you're not sure if the record exists.
+
+🔹 Example:
+Session session = sessionFactory.openSession();
+Employee emp = session.get(Employee.class, 101); // Immediately hits the DB
+
+if (emp != null) {
+    System.out.println(emp.getName());
+} else {
+    System.out.println("Employee not found");
+}
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+✅ load() Method
+
+Signature:
+
+public Object load(Class clazz, Serializable id)
+
+🔹 Characteristics:
+Lazy loading (by default): Returns a proxy object without hitting the database immediately.
+Only hits the DB when you try to access a property of the object.
+Throws ObjectNotFoundException if no record is found when it tries to access the DB.
+Useful when you're sure the object exists and want to avoid an immediate DB hit.
+
+🔹 Example:
+Session session = sessionFactory.openSession();
+Employee emp = session.load(Employee.class, 101); // Returns proxy, doesn't hit DB yet
+System.out.println(emp.getName()); // Now hits the DB
+
+If the object with ID 101 doesn't exist, you'll get an ObjectNotFoundException at the point where you access its data.
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
