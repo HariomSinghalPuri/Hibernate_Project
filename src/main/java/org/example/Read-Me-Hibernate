@@ -76,3 +76,18 @@ System.out.println(emp.getName()); // Now hits the DB
 If the object with ID 101 doesn't exist, you'll get an ObjectNotFoundException at the point where you access its data.
 
 <<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+🧠 What is "Embedding Objects" in Hibernate?
+In Hibernate, embedding means putting one Java object inside another, and storing all of their fields in the same
+database table (no joins, no extra tables).
+
+It’s like creating a component object that’s part of an entity.
+
+✅ Real-Life Analogy:
+Let’s say you have a Student entity, and each student has a certificate with a course and duration.
+
+You don’t need a separate table for the certificate — it’s just a part of the student record. So instead of
+creating a full-blown relationship, you embed it.
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
