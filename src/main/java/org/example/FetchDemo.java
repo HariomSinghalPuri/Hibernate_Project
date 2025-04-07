@@ -16,7 +16,8 @@ public class FetchDemo {
         System.out.println(student);
 
         Address ad = (Address)session.get(Address.class,2);
-        System.out.println(ad.getClass());
+        System.out.println(ad.getStreet()+" : "+ad.getCity());
+
 
 
 
