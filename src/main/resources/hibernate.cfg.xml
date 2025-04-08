@@ -23,6 +23,15 @@
         <property name="hbm2ddl.auto">create</property>
         <mapping class="org.example.Student" />
         <mapping class="org.example.Address" />
+        <mapping class="org.example.Certificate" />
+        <mapping class="Com.OneToOne.Question" />
+        <mapping class="Com.OneToOne.Answer" />
+
+
+
+
+
+
 
     </session-factory>
 </hibernate-configuration>
