@@ -1,9 +1,6 @@
 package Com.OneToOne;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Question {
@@ -11,18 +8,20 @@ public class Question {
     @Id
     @Column(name = "question_id")
     private int questionId;
+
     private String question;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "answer_id") // Foreign key in Question table
     private Answer answer;
 
+    public Question() {}
 
-    public Question() {
+    public Question(int questionId, String question, Answer answer) {
         this.questionId = questionId;
         this.question = question;
         this.answer = answer;
-
-
     }
-
 
     public int getQuestionId() {
         return questionId;
@@ -45,12 +44,6 @@ public class Question {
     }
 
     public void setAnswer(Answer answer) {
-        this.answer = answer;
-    }
-
-    public Question(int questionId, String question, Answer answer) {
-        this.questionId = questionId;
-        this.question = question;
         this.answer = answer;
     }
 }

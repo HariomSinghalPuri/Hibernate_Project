@@ -8,14 +8,11 @@ import javax.persistence.Id;
 @Entity
 public class Answer {
     @Id
-    @Column(name = "question_id")
+    @Column(name = "answer_id")
     private int answerId;
     private String answer;
 
-    public Answer(int answerId, String answer) {
-        this.answerId = answerId;
-        this.answer = answer;
-    }
+
 
     public int getAnswerId() {
         return answerId;
@@ -35,5 +32,10 @@ public class Answer {
     public Answer(){
         super();
     }
+    public Answer(int answerId, String answer) {
+        this.answerId = answerId;
+        this.answer = answer;
+    }
+
 
 }

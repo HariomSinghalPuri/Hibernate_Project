@@ -19,19 +19,21 @@ public class MapDemo {
         q1.setQuestion("What is Java ???");
 
         // Creating Answer:
-        Answer answer= new Answer();
-        answer.setAnswerId(343);
-        answer.setAnswer("JAVA is a Programming language");
+        Answer answer1 = new Answer();
+        answer1.setAnswerId(343);
+        answer1.setAnswer("JAVA is a Programming language");
+        q1.setAnswer(answer1);
 
         // Creating Question
         Question q2 = new Question();
-        q1.setQuestionId(242);
-        q1.setQuestion("What is Collection Framework ???");
+        q2.setQuestionId(242);
+        q2.setQuestion("What is Collection Framework ???");
 
         // Creating Answer:
-        Answer answer1= new Answer();
-        answer.setAnswerId(344);
-        answer.setAnswer("API to work with objects in java");
+        Answer answer2 = new Answer();
+        answer2.setAnswerId(344);
+        answer2.setAnswer("API to work with objects in java");
+        q2.setAnswer(answer2);
 
         Session s = factory.openSession();
         Transaction tx = s.beginTransaction();
@@ -39,12 +41,6 @@ public class MapDemo {
         s.save(q2);
         tx.commit();
         s.close();
-
-
-
-
-
-
 
         System.out.println(factory);
         System.out.println(factory.isClosed());
