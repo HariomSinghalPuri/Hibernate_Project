@@ -33,6 +33,14 @@ In Hibernate (a popular ORM tool in Java), both get() and load() methods are use
 using their primary key. However, they behave differently in terms of how and when they hit the database and what happens when the object doesn't exist.
 
 <<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+ |||||---->>>>
+
+ Remember to Uncomment the cfg.xml mapping when you are working on that project .
+ Like When You are doing One to One mapping in Hibernate just  Put Com.OneToOne.<Related Files>
+ other than Just Comment Out All
+
+ |||||---->>>>
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
 
 ✅ get() Method
 Signature:
@@ -90,4 +98,39 @@ You don’t need a separate table for the certificate — it’s just a part of 
 creating a full-blown relationship, you embed it.
 
 <<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+One To One Mapping :
+
+🔗 What is One-to-One Mapping?
+In Hibernate, a One-to-One mapping means one entity is associated with exactly one other entity.
+
+Example:
+A Person has one Passport.
+A Question has one Answer.
+
+🧠 What Hibernate Does:
+Creates a question table with a column answer_id (foreign key).
+Links each Question row to exactly one row in the answer table.
+
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+One To Many Mapping :
+
+🔗 What is One-to-Many Mapping?
+In Hibernate, a One-to-Many relationship means one entity is related to multiple other entities.
+
+Example:
+A Question can have many Answers.
+A Department can have many Employees.
+
+✅ What Hibernate Does:
+Creates a question table.
+Creates an answer table with a question_id column (foreign key).
+Links each answer to its corresponding question.
+
+<<<<<-------------------------------------------------------------------------------------------------------------->>>>>
+
+
+
 
